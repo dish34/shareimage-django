@@ -4,8 +4,8 @@ from .forms import PostForm
 # Create your views here.
 def image_list_view(request):
     query = Image.objects.all()
-    num_visit = request.session.get('num_visit',0)
-    request.session['num_visit'] = num_visit+1
+    num_visits = request.session.get('num_visits',0)
+    request.session['num_visits'] = num_visits+1
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -18,7 +18,7 @@ def image_list_view(request):
         'imgobj': query,
         'test' : "testing",
         'form' : form,
-        'num_visits': num_visit
+        'num_visits': num_visits
     }
     return render(request,"share/index.html",context)
 
