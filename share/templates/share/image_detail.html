@@ -1,0 +1,20 @@
+{% extends 'share/base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'share/snipets/navbar.html' %}
+<div class="container my-5">
+    <div class="row mr-5">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{image.img.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{image.title}}</h5>
+                    <p class="card-text">{{image.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

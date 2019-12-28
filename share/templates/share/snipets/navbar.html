@@ -1,0 +1,12 @@
+{% url 'displayimage' as disimg %}
+{% url 'images' as imgurl %}
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link {% if request.path == disimg %} active {% endif %}" href="{% url 'displayimage'%}">Images</a>
+    </li>
+    <li class="nav-item ml-auto">
+        <a class="nav-link {% if request.path == imgurl %} active {% endif %}" href="{% url 'images' %}">Upload
+            Image</a>
+    </li>
+
+</ul>
